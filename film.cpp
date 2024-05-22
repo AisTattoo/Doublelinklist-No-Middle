@@ -75,6 +75,7 @@ void addLast(string data[3]) {
     }
 }
 
+
 // Remove First
 void removeFirst()
 {
@@ -102,6 +103,28 @@ void removeLast()
         delete hapus;
     }
 }
+
+
+void changeFirst(string data[3]) {
+    if (kepala == NULL) {
+        cout << "Double Linked List belum dibuat!!!";
+    } else {
+        kepala->namaFilm = data[0];
+        kepala->durasi = stoi(data[1]);
+        kepala->harga = stoi(data[2]);
+    }
+}
+
+void changeLast(string data[3]) {
+    if (kepala == NULL) {
+        cout << "Double Linked List belum dibuat!!!";
+    } else {
+        ekor->namaFilm = data[0];
+        ekor->durasi = stoi(data[1]);
+        ekor->harga = stoi(data[2]);
+    }
+}
+
 
 // Print Double Linked List
 void printDoubleLinkedList()
@@ -142,7 +165,21 @@ int main() {
 
     printDoubleLinkedList();
 
-    string data4[3] = { "The Architecture of Love", "110", "55000" };
+    string data5[3] = { "ayam dari timur", "112", "34000"};
+    changeFirst(data5);
+
+    printDoubleLinkedList();
+
+    string data6[3] = { "laptop baru berujung lama", "130", "60000"};
+    changeLast(data6);
+
+    printDoubleLinkedList();
+
+    removeFirst();
+    printDoubleLinkedList();
+
+    removeLast();
+    printDoubleLinkedList();
 
     return 0;
 }
